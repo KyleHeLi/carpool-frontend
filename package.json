@@ -1,12 +1,21 @@
 {
-  "name": "carpool-frontend",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "The frontend of carpool application",
+  "description": "carpool",
   "author": "Kyle Li",
   "license": "MIT",
-  "private": true,
+  "scripts": {
+    "compile": "tsc --p tsconfig.json",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "format": "prettier ./src/**"
+  },
   "dependencies": {
-    "@material-ui.core": "^4.0.2",
+    "@material-ui/core": "^4.1.1",
+    "@material-ui/icons": "^4.2.0",
     "@types/jest": "^24.0.13",
     "@types/lodash": "^4.14.134",
     "@types/node": "^12.0.7",
@@ -15,35 +24,33 @@
     "@types/react-router-dom": "^4.3.3",
     "@types/recompose": "^0.30.6",
     "@types/yup": "^0.26.22",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "acorn": "^6.1.1",
     "formik": "^1.5.8",
     "jest-resolve": "^24.8.0",
     "lodash": "^4.17.15",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
     "recompose": "^0.30.0",
     "typescript": "^3.5.1",
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsdoc": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-notice": "^0.7.8",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.0",
+    "prettier": "^1.18.2",
     "tslint": "^5.17.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
