@@ -58,7 +58,7 @@ const App = () => {
             <Preferences />
           </Route>
           <Route path="*">
-            <NotMatch />
+            <Dashboard />
           </Route>
         </Switch>
       </div>

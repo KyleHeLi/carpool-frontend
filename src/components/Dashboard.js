@@ -7,7 +7,7 @@ const Dashboard = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     console.log("Logout clicked!");
-    sessionStorage.removeItem("token");
+    localStorage.removeItem("token");
     history.push("/sign-in");
     window.location.reload();
   };
