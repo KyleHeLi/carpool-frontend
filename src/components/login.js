@@ -15,6 +15,7 @@ async function loginUser(credentials) {
 function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [display, setDisplay] = useState(false);
   let history = useHistory();
 
   const handleSubmit = async (e) => {
@@ -22,15 +23,32 @@ function Login({ setToken }) {
     const token = await loginUser({
       username,
       password,
-    });
-    setToken(token);
-    history.push("/dashboard");
+    }).catch((err) => {});
+    console.log("handleSubmit token: " + token);
+    setDisplay(false);
+
+    if (token !== undefined) {
+      setToken(token);
+      history.push("/dashboard");
+    } else {
+      setDisplay(true);
+    }
   };
+
+  let showWarning = {};
+  if (!display) {
+    showWarning.display = "none";
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <h3>Sign In</h3>
 
+      <div className="warning" style={showWarning}>
+        <p style={{ color: "red" }}>
+          The username and password do not match. Please try again!
+        </p>
+      </div>
       <div className="form-group">
         <label>Email address</label>
         <input
