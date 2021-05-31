@@ -82,3 +82,7 @@ html,
 .forgot-password a {
   color: #167bff;
 }
+
+.dashboard-wrapper {
+  background-color: #ffffff;
+}
